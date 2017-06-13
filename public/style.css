@@ -1,0 +1,9 @@
+body {
+	background-color: #666;
+}
+
+.jumbotron {
+	background-color: black;
+	color: white;
+	font-family: times;
+}
