@@ -6,14 +6,18 @@ const Results = require('./results.js');
 
 
 class Search extends React.Component {
-	console.log(this.props)
+
 	render(){
+		console.log("----------");
+        console.log(this.props.results);
+        console.log("----------");
+
 	return(
 		<div className="search">
-		
+
 
 		<Query setTerm={this.props.setTerm} />
-		<Results data={this.props.results} />
+		<Results results={this.props.results} />
 
 		</div>
 		)

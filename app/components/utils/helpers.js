@@ -19,7 +19,8 @@ var helper = {
                     var myobj ={
                     title: result.data.response.docs[i].headline.main,
                     link: result.data.response.docs[i].web_url,
-                    date: result.data.response.docs[i].pub_date
+                    date: result.data.response.docs[i].pub_date,
+                    index: i
                 }
                 myArray.push(myobj);
   
@@ -40,8 +41,9 @@ var helper = {
         return axios.get("/api");
     },
 
-    postHistory(title) {
-        return axios.post("/api", {title: title});
+    postHistory(title, link, date) {
+        return axios.post("/api", {title: title, link: link, date: date});
+        console.log("in postHistory");
     }
 };
 

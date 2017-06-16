@@ -28,7 +28,7 @@ app.use(express.static("./public"));
 
 
 // MongoDB Configuration configuration (Change this URL to your own DB)
-mongoose.connect("mongodb://localhost/nytreact");
+mongoose.connect("mongodb://localhost/reactnyt");
 var db = mongoose.connection;
 
 db.on("error", function(err) {
@@ -60,10 +60,13 @@ app.get("/api", function(req, res) {
 
 // // This is the route we will send POST requests to save each search.
 app.post("/api", function(req, res) {
-    console.log(req.body);
-
+    console.log(req.body.title);
+    console.log(req.body.link);
+    console.log(req.body.date);
   Article.create({
-    title: req.body.title
+    title: req.body.title,
+    link: req.body.link,
+    date: req.body.date
   }, function(err) {
     if (err) {  
       console.log(err);

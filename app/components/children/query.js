@@ -21,10 +21,11 @@ constructor(props){
 
 
 	handleChange(event) {
-			console.log(this); {/* undefined */}
-			console.log("eventtargetvalue");
-			console.log(event.target.value);
-
+			{/*
+      // console.log(this); 
+			// console.log("eventtargetvalue");
+			// console.log(event.target.value);
+*/}
 
 
     const target = event.target;

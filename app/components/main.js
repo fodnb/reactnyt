@@ -53,11 +53,14 @@ class App extends React.Component{
       if (data !== this.state.results) {
         console.log(data);
         this.setState( {results: data} );
-        
-
+        console.log("----------");
+        console.log(this.state.results);
+        console.log("----------");
         // After we've received the result... then post the search term to our history.
-        helpers.postHistory(this.state.newterm).then(function() {
-          console.log("Updated!");
+        // helpers.postHistory(results.title, results.link, results.date).then(function() {
+        //   console.log("Updated!");
+        //   console.log(results)
+
 
           // After we've done the post... then get the updated history
          helpers.getHistory().then(function(response) {
@@ -68,7 +71,7 @@ class App extends React.Component{
             this.setState({ history: response.data });
 
           }.bind(this));
-        }.bind(this));
+        // }.bind(this));
       }
     }.bind(this));
   }
